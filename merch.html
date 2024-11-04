@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mercancia en Venta</title>
     <link rel="stylesheet" href="styledisc.css">
+    <style>
+        .mercadopago-button {
+            padding: 0 1.7142857142857142em;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 17.5px;
+            line-height: 2.7142857142857144;
+            background: #009ee3;
+            border-radius: 0.2857142857142857em;
+            color: #fff;
+            cursor: pointer;
+            border: 0;
+            width: 106.69px;
+            height: 47.59px; 
+        }
+    </style>
 </head>
 <body>
     <!-- Logo y Navegación -->
@@ -25,26 +40,41 @@
             <div class="vinilo-item">
                 <img src="imagenes/POLO1ID.webp" alt="Álbum 1">
                 <h3>Polo WT 2022<h3>
-                <p>S/.59.99</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <p><strong>S/.59.99</strong></p>
+                
+                <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
+                    data-preference-id="481027289-a8b631ab-9628-455f-ad6b-1877027f9ade" data-source="button">
+                </script>
+
             </div>
             <div class="vinilo-item">
                 <img src="imagenes/POLO2ID.webp" alt="Álbum 2">
                 <h3>Polo Mercury</h3>
-                <p>S/.74.99</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <p><strong>S/.74.99</strong></p>
+                
+                <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
+                    data-preference-id="481027289-5052f5aa-a13d-4eff-b1f9-568b292de557" data-source="button">
+                </script>
+                
             </div>
             <div class="vinilo-item">
                 <img src="imagenes/POLERA1TOP.png" alt="Álbum 3">
                 <h3>Polera Clancy v1</h3>
-                <p>S/.119.99</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <p><strong>S/.119.99</strong></p>
+                
+                <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
+                    data-preference-id="481027289-3bb58c35-f252-40ed-8ee2-6c6c65f3f42b" data-source="button">
+                </script>
             </div>
             <div class="vinilo-item">
                 <img src="imagenes/POLERA2TOP.png" alt="Álbum 4">
-                <h3>Polera Clancy v1</h3>
-                <p>S/.124.99</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <h3>Polera Clancy v2</h3>
+                <p><strong>S/.124.99</strong></p>
+                
+                <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
+                    data-preference-id="481027289-45ce9654-ff11-4da2-81e1-118a50e20df1" data-source="button">
+                </script>
+
             </div>
         </div>
     </section>
