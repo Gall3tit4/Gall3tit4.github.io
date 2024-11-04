@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinilos en Venta</title>
     <link rel="stylesheet" href="stylevini.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AaTjtJ948rX97Lbr4hBCV8jxFirfY3luKbS5wl-e-nkCgE92wIw51ou74UuWdmHhnv7gmF2BXOYuaLe9&currency=USD"></script>
 </head>
 <body>
     <!-- Logo y Navegación -->
@@ -26,27 +27,152 @@
                 <img src="imagenes/LOOM.webp" alt="Álbum 1">
                 <h3>Imagine Dragons LOOM<h3>
                 <p>$59.99</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+
+                <div id="paypal-button-container1"></div>
+                    <script>
+                        paypal.Buttons({
+                        style: {
+                            //color: 'blue',
+                            shape: 'pill',
+                            label: 'pay'
+                        },
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: 59.99
+                                        }
+                                    }]
+                                });
+                            },
+
+                            onApprove: function(data, actions) {
+                            actions.order.capture().then(function(detalles) {
+                                window.location.href = "completado.html";
+                            });
+                            },
+
+                            onCancel: function(data) {
+                                alert("Pago cancelado");
+                            }
+                        }).render('#paypal-button-container1');
+
+                    </script>
             </div>
+
             <div class="vinilo-item">
                 <img src="imagenes/nigthvisions.webp" alt="Álbum 2">
                 <h3>Nigth Visions</h3>
-                <p>$34.99</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <p><strong>$34.99</strong></p>
+
+                <div id="paypal-button-container2"></div>
+                    <script>
+                        paypal.Buttons({
+                        style: {
+                            //color: 'blue',
+                            shape: 'pill',
+                            label: 'pay'
+                        },
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: 34.99
+                                        }
+                                    }]
+                                });
+                            },
+
+                            onApprove: function(data, actions) {
+                            actions.order.capture().then(function(detalles) {
+                                window.location.href = "completado.html";
+                            });
+                            },
+
+                            onCancel: function(data) {
+                                alert("Pago cancelado");
+                            }
+                        }).render('#paypal-button-container2');
+
+                    </script>
+                
             </div>
             <div class="vinilo-item">
                 <img src="imagenes/CLANCYVINIL.png" alt="Álbum 3">
                 <h3>Clancy</h3>
-                <p>$39.99</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <p><strong>$39.99</strong></p>
+                
+                <div id="paypal-button-container3"></div>
+                    <script>
+                        paypal.Buttons({
+                        style: {
+                            //color: 'blue',
+                            shape: 'pill',
+                            label: 'pay'
+                        },
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: 39.99
+                                        }
+                                    }]
+                                });
+                            },
+
+                            onApprove: function(data, actions) {
+                            actions.order.capture().then(function(detalles) {
+                                window.location.href = "completado.html";
+                            });
+                            },
+
+                            onCancel: function(data) {
+                                alert("Pago cancelado");
+                            }
+                        }).render('#paypal-button-container3');
+
+                    </script>
+
             </div>
             <div class="vinilo-item">
                 <img src="imagenes/SCALED AND ICY VINI.png" alt="Álbum 4">
-                <h3>Scaled and Icy</h3>
-                <p>$24.99</p>
-                <a href="#" class="btn-comprar">Comprar</a>
+                <h3>Scaled and Icy</h3> <br>
+                <p><strong>$24.99</strong></p>
+                
+                <div id="paypal-button-container4"></div>
+                    <script>
+                        paypal.Buttons({
+                        style: {
+                            //color: 'blue',
+                            shape: 'pill',
+                            label: 'pay'
+                        },
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{
+                                        amount: {
+                                            value: 24.99
+                                        }
+                                    }]
+                                });
+                            },
+
+                            onApprove: function(data, actions) {
+                            actions.order.capture().then(function(detalles) {
+                                window.location.href = "completado.html";
+                            });
+                            },
+
+                            onCancel: function(data) {
+                                alert("Pago cancelado");
+                            }
+                        }).render('#paypal-button-container4');
+
+                    </script>
+
             </div>
         </div>
     </section>
 </body>
 </html>
+
