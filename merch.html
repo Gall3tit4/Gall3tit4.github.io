@@ -3,21 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercancia en Venta</title>
+    <title>Mercancía en Venta</title>
     <link rel="stylesheet" href="styledisc.css">
+    <!-- Incluye CSS de Plyr -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
     <style>
         .mercadopago-button {
-            padding: 0 1.7142857142857142em;
+            padding: 0 1.714em;
             font-family: "Helvetica Neue", Arial, sans-serif;
             font-size: 17.5px;
-            line-height: 2.7142857142857144;
+            line-height: 2.714;
             background: #009ee3;
-            border-radius: 0.2857142857142857em;
+            border-radius: 0.286em;
             color: #fff;
             cursor: pointer;
             border: 0;
             width: 106.69px;
             height: 47.59px; 
+        }
+
+        .unboxing-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .unboxing-section h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .unboxing-videos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .unboxing-video .plyr {
+            border-radius: 8px;
+            width: 320px;
+            height: 240px;
         }
     </style>
 </head>
@@ -29,54 +57,80 @@
             <a href="index.html">Inicio</a>
             <a href="vinilo.html">Vinilos</a>
             <a href="disco.html">Discos</a>
-            <a href="merch.html"class="active">Mercancía</a>
+            <a href="merch.html" class="active">Mercancía</a>
         </nav>
     </header>
     
-    <!-- Sección de Vinilos en Venta -->
+    <!-- Sección de Mercancía en Venta -->
     <section class="vinilos">
-        <h2>Mercancia en Venta</h2>
+        <h2>Mercancía en Venta</h2>
         <div class="vinilos-galeria">
             <div class="vinilo-item">
-                <img src="https://ddy5rr91svt3g.cloudfront.net/POLO1ID.webp" alt="Álbum 1">
-                <h3>Polo WT 2022<h3>
+                <img src="https://ddy5rr91svt3g.cloudfront.net/POLO1ID.webp" alt="Polo WT 2022">
+                <h3>Polo WT 2022</h3>
                 <p><strong>S/.59.99</strong></p>
-                
                 <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
                     data-preference-id="481027289-a8b631ab-9628-455f-ad6b-1877027f9ade" data-source="button">
                 </script>
-
             </div>
+
             <div class="vinilo-item">
-                <img src="https://ddy5rr91svt3g.cloudfront.net/POLO2ID.webp" alt="Álbum 2">
+                <img src="https://ddy5rr91svt3g.cloudfront.net/POLO2ID.webp" alt="Polo Mercury">
                 <h3>Polo Mercury</h3>
                 <p><strong>S/.74.99</strong></p>
-                
                 <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
                     data-preference-id="481027289-5052f5aa-a13d-4eff-b1f9-568b292de557" data-source="button">
                 </script>
-                
             </div>
+
             <div class="vinilo-item">
-                <img src="https://ddy5rr91svt3g.cloudfront.net/POLERA1TOP.png" alt="Álbum 3">
+                <img src="https://ddy5rr91svt3g.cloudfront.net/POLERA1TOP.png" alt="Polera Clancy v1">
                 <h3>Polera Clancy v1</h3>
                 <p><strong>S/.119.99</strong></p>
-                
                 <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
                     data-preference-id="481027289-3bb58c35-f252-40ed-8ee2-6c6c65f3f42b" data-source="button">
                 </script>
             </div>
+
             <div class="vinilo-item">
-                <img src="https://ddy5rr91svt3g.cloudfront.net/POLERA2TOP.png" alt="Álbum 4">
+                <img src="https://ddy5rr91svt3g.cloudfront.net/POLERA2TOP.png" alt="Polera Clancy v2">
                 <h3>Polera Clancy v2</h3>
                 <p><strong>S/.124.99</strong></p>
-                
                 <script src="https://www.mercadopago.com.pe/integrations/v1/web-payment-checkout.js"
                     data-preference-id="481027289-45ce9654-ff11-4da2-81e1-118a50e20df1" data-source="button">
                 </script>
-
             </div>
         </div>
     </section>
+
+    <!-- Sección de Unboxing -->
+    <section class="unboxing-section">
+        <h2>Zona de Unboxing</h2>
+        <div class="unboxing-videos">
+            <!-- Primer Video -->
+            <div class="unboxing-video">
+                <video class="plyr" controls>
+                    <source src="https://ddy5rr91svt3g.cloudfront.net/merchLOOM.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+
+            <!-- Segundo Video -->
+            <div class="unboxing-video">
+                <video class="plyr" controls>
+                    <source src="https://ddy5rr91svt3g.cloudfront.net/merchCLANCY.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Incluye Plyr JS -->
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+    <script>
+        // Inicializa Plyr para los videos
+        const players = Plyr.setup('.plyr');
+    </script>
 </body>
 </html>
+
