@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinilos en Venta</title>
+    <title>Discos en Venta</title>
     <link rel="stylesheet" href="styledisc.css">
+    <!-- Incluye CSS de Plyr -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
     <script src="https://www.paypal.com/sdk/js?client-id=AaTjtJ948rX97Lbr4hBCV8jxFirfY3luKbS5wl-e-nkCgE92wIw51ou74UuWdmHhnv7gmF2BXOYuaLe9&currency=USD"></script>
 </head>
 <body>
@@ -23,79 +25,77 @@
     <section class="vinilos">
         <h2>Discos en Venta</h2>
         <div class="vinilos-galeria">
+            <!-- Disco 1: LOOM -->
             <div class="vinilo-item">
                 <img src="https://ddy5rr91svt3g.cloudfront.net/LOOMdisc.jpg" alt="Álbum 1">
-                <h3>LOOM<h3>
+                <h3>LOOM</h3>
                 <p><strong>$59.99</strong></p>
 
+                <!-- Botón de PayPal -->
                 <div id="paypal-button-container5"></div>
                 <script>
                     paypal.Buttons({
-                    style: {
-                        //color: 'blue',
-                        shape: 'pill',
-                        label: 'pay'
-                    },
+                        style: { shape: 'pill', label: 'pay' },
                         createOrder: function(data, actions) {
-                            return actions.order.create({
-                                purchase_units: [{
-                                    amount: {
-                                        value: 59.99
-                                    }
-                                }]
+                            return actions.order.create({ purchase_units: [{ amount: { value: 59.99 } }] });
+                        },
+                        onApprove: function(data, actions) {
+                            actions.order.capture().then(function(detalles) {
+                                window.location.href = "completado.html";
                             });
                         },
-
-                        onApprove: function(data, actions) {
-                        actions.order.capture().then(function(detalles) {
-                            window.location.href = "completado.html";
-                        });
-                        },
-
                         onCancel: function(data) {
                             alert("Pago cancelado");
                         }
                     }).render('#paypal-button-container5');
                 </script>
 
+                <!-- Reproductor de audio mejorado con Plyr para LOOM -->
+                <div class="audio-container">
+                    <p>Escucha una muestra:</p>
+                    <audio class="plyr-audio" controls>
+                        <source src="https://ddy5rr91svt3g.cloudfront.net/discLOOM.mp3" type="audio/mp3">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
             </div>
+
+            <!-- Disco 2: Night Visions -->
             <div class="vinilo-item">
                 <img src="https://ddy5rr91svt3g.cloudfront.net/nigthvisiondisc.webp" alt="Álbum 2">
-                <h3>Nigth Visions</h3>
+                <h3>Night Visions</h3>
                 <p><strong>$34.99</strong></p>
-
+                
+                <!-- Botón de PayPal -->
                 <div id="paypal-button-container6"></div>
                 <script>
                     paypal.Buttons({
-                    style: {
-                        //color: 'blue',
-                        shape: 'pill',
-                        label: 'pay'
-                    },
+                        style: { shape: 'pill', label: 'pay' },
                         createOrder: function(data, actions) {
-                            return actions.order.create({
-                                purchase_units: [{
-                                    amount: {
-                                        value: 34.99
-                                    }
-                                }]
+                            return actions.order.create({ purchase_units: [{ amount: { value: 34.99 } }] });
+                        },
+                        onApprove: function(data, actions) {
+                            actions.order.capture().then(function(detalles) {
+                                window.location.href = "completado.html";
                             });
                         },
-
-                        onApprove: function(data, actions) {
-                        actions.order.capture().then(function(detalles) {
-                            window.location.href = "completado.html";
-                        });
-                        },
-
                         onCancel: function(data) {
                             alert("Pago cancelado");
                         }
                     }).render('#paypal-button-container6');
-
                 </script>
 
+                <!-- Reproductor de audio mejorado con Plyr para Night Visions -->
+                <div class="audio-container">
+                    <p>Escucha una muestra:</p>
+                    <audio class="plyr-audio" controls>
+                        <source src="https://ddy5rr91svt3g.cloudfront.net/discNIGHT.mp3" type="audio/mp3">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
             </div>
+
+            <!-- Disco 3: Clancy -->
             <div class="vinilo-item">
                 <br><br><br><br>
                 <img src="https://ddy5rr91svt3g.cloudfront.net/CLANCYDISC.png" alt="Álbum 3">
@@ -103,38 +103,36 @@
                 <h3>Clancy</h3>
                 <p><strong>$39.99</strong></p>
 
+                <!-- Botón de PayPal -->
                 <div id="paypal-button-container7"></div>
                 <script>
                     paypal.Buttons({
-                    style: {
-                        //color: 'blue',
-                        shape: 'pill',
-                        label: 'pay'
-                    },
+                        style: { shape: 'pill', label: 'pay' },
                         createOrder: function(data, actions) {
-                            return actions.order.create({
-                                purchase_units: [{
-                                    amount: {
-                                        value: 39.99
-                                    }
-                                }]
+                            return actions.order.create({ purchase_units: [{ amount: { value: 39.99 } }] });
+                        },
+                        onApprove: function(data, actions) {
+                            actions.order.capture().then(function(detalles) {
+                                window.location.href = "completado.html";
                             });
                         },
-
-                        onApprove: function(data, actions) {
-                        actions.order.capture().then(function(detalles) {
-                            window.location.href = "completado.html";
-                        });
-                        },
-
                         onCancel: function(data) {
                             alert("Pago cancelado");
                         }
                     }).render('#paypal-button-container7');
-
                 </script>
 
+                <!-- Reproductor de audio mejorado con Plyr para Clancy -->
+                <div class="audio-container">
+                    <p>Escucha una muestra:</p>
+                    <audio class="plyr-audio" controls>
+                        <source src="https://ddy5rr91svt3g.cloudfront.net/discCLANCY.mp3" type="audio/mp3">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
             </div>
+
+            <!-- Disco 4: Trench -->
             <div class="vinilo-item">
                 <br><br>
                 <img src="https://ddy5rr91svt3g.cloudfront.net/TRENCHDISC.png" alt="Álbum 4">
@@ -142,40 +140,42 @@
                 <h3>Trench</h3>
                 <p><strong>$24.99</strong></p>
 
+                <!-- Botón de PayPal -->
                 <div id="paypal-button-container8"></div>
                 <script>
                     paypal.Buttons({
-                    style: {
-                        //color: 'blue',
-                        shape: 'pill',
-                        label: 'pay'
-                    },
+                        style: { shape: 'pill', label: 'pay' },
                         createOrder: function(data, actions) {
-                            return actions.order.create({
-                                purchase_units: [{
-                                    amount: {
-                                        value: 24.99
-                                    }
-                                }]
+                            return actions.order.create({ purchase_units: [{ amount: { value: 24.99 } }] });
+                        },
+                        onApprove: function(data, actions) {
+                            actions.order.capture().then(function(detalles) {
+                                window.location.href = "completado.html";
                             });
                         },
-
-                        onApprove: function(data, actions) {
-                        actions.order.capture().then(function(detalles) {
-                            window.location.href = "completado.html";
-                        });
-                        },
-
                         onCancel: function(data) {
                             alert("Pago cancelado");
                         }
                     }).render('#paypal-button-container8');
-
                 </script>
 
+                <!-- Reproductor de audio mejorado con Plyr para Trench -->
+                <div class="audio-container">
+                    <p>Escucha una muestra:</p>
+                    <audio class="plyr-audio" controls>
+                        <source src="https://ddy5rr91svt3g.cloudfront.net/discTRENCH.mp3" type="audio/mp3">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Incluye Plyr JS -->
+    <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+    <script>
+        // Inicializa el reproductor de Plyr
+        const players = Plyr.setup('.plyr-audio');
+    </script>
 </body>
 </html>
-
